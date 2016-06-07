@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>ARM Workshop</title>
+    <link rel="stylesheet" href="node_modules/remark-bekk/dist/bekk.css">
+</head>
+
+<body class="bekk-black">
+    <textarea id="source">
+
+class: front-page
+
+# title
+
+## .NET-faggruppen
+
+Henrik Walker Moe
+
+<span class="today-date"></span>
+
+---
+
+class: center middle
+
+Blabla
+
+???
+comment
+
+---
+
+class: center middle bekk-top
+
+# Cheat sheet
+
+[https://github.com/henrikwm/arm-workshop](https://github.com/henrikwm/arm-workshop)
+
+    </textarea>
+    <script src="node_modules/remark-bekk/vendor/remark.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var slideshow = remark.create({
+        ratio: '16:9',
+        highlightLanguage: 'javascript',
+        highlightStyle: 'monokai_sublime'
+    });
+
+    var dateStr = new Date().toLocaleString('nb-NO', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    Array.prototype.slice.call(document.querySelectorAll(".today-date")).forEach(function(el) {
+        el.textContent = dateStr;
+    });
+    </script>
+    <style type="text/css">
+      .remark-notes {
+        font-size: 1.5em;
+      }
+
+      .split {
+        padding-right: 45%;
+      }
+      .split img,
+      .split iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        max-height: none !important;
+        border: 0;
+      }
+
+      .rotate {
+        animation:spin 4s linear infinite;
+      }
+
+      @keyframes spin {
+        100% {
+          transform:rotate(360deg);
+        }
+      }
+
+      [id^=twitter-widget-] {
+        display: inline-block !important;
+        transform: scale(2);
+      }
+    </style>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+
+</html>
