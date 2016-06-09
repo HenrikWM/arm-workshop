@@ -59,31 +59,7 @@
         "serverFarmId": "[parameters('serverFarmName')]"
       },
       "resources": [
-        {
-          "apiVersion": "2015-08-01",
-          "name": "appsettings",
-          "type": "config",
-          "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', parameters('webAppName'))]"
-          ],
-          "properties": {
-            "clientUrl": "[concat('http://', parameters('webAppName'), '.azurewebsites.net')]"
-          }
-        },
-        {
-          "apiVersion": "2015-08-01",
-          "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', parameters('webAppName'))]",
-            "[resourceId('Microsoft.Web/Sites/config', parameters('webAppName'), 'appsettings')]"
-          ],
-          "name": "web",
-          "properties": {
-            "RepoUrl": "[parameters('repoUrl')]",
-            "branch": "[parameters('branch')]",
-            "IsManualIntegration": true
-          },
-          "type": "sourcecontrols"
-        }
+        
       ],
       "type": "Microsoft.Web/sites"
     }
