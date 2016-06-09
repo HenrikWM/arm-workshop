@@ -1,6 +1,19 @@
 # ARM-workshop
 
-Workshop i [Azure Resource Manager] for .NET-faggruppen i BEKK.
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fbekk%2Farm-workshop%2Fblob%2Fmaster%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fbekk%2Farm-workshop%2Fblob%2Fmaster%2Fazuredeploy.json" target="_blank">
+    <img src="http://armviz.io/visualizebutton.png"/>
+</a>
+
+Deploy en enkel HelloWorld Web App til Azure og visualiser deployet infrastruktur.
+
+## Workshop 
+
+Workshoppen handler om provisjonering av ressurser via [Azure Resource Manager], holdt av [@henrikwm84] for .NET-faggruppen i BEKK.
+
+## Slides
 
 Slides for workshopen dekker:
 
@@ -8,8 +21,6 @@ Slides for workshopen dekker:
 - Template format
 - Verktøy
 - Cheat sheet med ressurser
-
-## Slides
 
 For å bygge slidene behøver du Node + NPM installert globalt i tillegg til [remark-themet til BEKK].
 
@@ -22,8 +33,6 @@ $ npm install bekk/remark
 ```
 
 Deretter åpner du `index.html` i en nettleser.
-
-Lagd av: [@henrikwm84]
 
 [@henrikwm84]: <http://twitter.com/henrikwm84>
 [slides]: <https://github.com/henrikwm/arm-workshop/slides>
