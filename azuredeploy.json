@@ -1,17 +1,38 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "webAppName": {
+    "siteName": {
       "type": "string",
       "metadata": {
-        "description": "Name of Web App"
+        "description": "The name of the web app that you wish to create."
       }
     },
-    "serverFarmName": {
+    "hostingPlanName": {
       "type": "string",
       "metadata": {
-        "description": "Name of hosting plan"
+        "description": "The name of the App Service plan to use for hosting the web app."
+      }
+    },
+    "sku": {
+      "type": "string",
+      "allowedValues": [
+        "F1",
+        "D1",
+        "B1",
+        "B2",
+        "B3",
+        "S1",
+        "S2",
+        "S3",
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "defaultValue": "S1",
+      "metadata": {
+        "description": "The pricing tier for the hosting plan."
       }
     },
     "workerSize": {
@@ -23,45 +44,64 @@
       ],
       "defaultValue": "0",
       "metadata": {
-        "description": "Worker Size( 0=Small, 1=Medium, 2=Large )"
+        "description": "The instance size of the hosting plan (small, medium, or large)."
       }
     },
-    "repoUrl": {
-      "type": "string"
+    "repoURL": {
+      "type": "string",
+      "defaultValue": "https://github.com/davidebbo-test/Mvc52Application.git",
+      "metadata": {
+        "description": "The URL for the GitHub repository that contains the project to deploy."
+      }
     },
     "branch": {
       "type": "string",
-      "defaultValue": "master"
+      "defaultValue": "master",
+      "metadata": {
+        "description": "The branch of the GitHub repository to use."
+      }
     }
   },
   "resources": [
     {
       "apiVersion": "2015-08-01",
+      "name": "[parameters('hostingPlanName')]",
+      "type": "Microsoft.Web/serverfarms",
       "location": "[resourceGroup().location]",
-      "name": "[parameters('serverFarmName')]",
-      "properties": {
-        "name": "[parameters('serverFarmName')]",
-        "sku": "Free",
-        "workerSize": "[parameters('workerSize')]",
-        "numberOfWorkers": 1
+      "sku": {
+        "name": "[parameters('sku')]",
+        "capacity": "[parameters('workerSize')]"
       },
-      "type": "Microsoft.Web/serverfarms"
+      "properties": {
+        "name": "[parameters('hostingPlanName')]"
+      }
     },
     {
       "apiVersion": "2015-08-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', parameters('serverFarmName'))]"
-      ],
+      "name": "[parameters('siteName')]",
+      "type": "Microsoft.Web/sites",
       "location": "[resourceGroup().location]",
-      "name": "[parameters('webAppName')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+      ],
       "properties": {
-        "name": "[parameters('webAppName')]",
-        "serverFarmId": "[parameters('serverFarmName')]"
+        "serverFarmId": "[parameters('hostingPlanName')]"
       },
       "resources": [
-        
-      ],
-      "type": "Microsoft.Web/sites"
+        {
+          "apiVersion": "2015-08-01",
+          "name": "web",
+          "type": "sourcecontrols",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
+          ],
+          "properties": {
+            "RepoUrl": "[parameters('repoURL')]",
+            "branch": "[parameters('branch')]",
+            "IsManualIntegration": true
+          }
+        }
+      ]
     }
   ]
 }
