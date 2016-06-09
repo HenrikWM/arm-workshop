@@ -58,19 +58,6 @@
         "name": "[parameters('webAppName')]",
         "serverFarmId": "[parameters('serverFarmName')]"
       },
-      "resources": [
-        {
-          "apiVersion": "2015-08-01",
-          "name": "appsettings",
-          "type": "config",
-          "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', parameters('webAppName'))]"
-          ],
-          "properties": {
-            "clientUrl": "[concat('http://', parameters('webAppName'), '.azurewebsites.net')]"
-          }
-        }        
-      ],
       "type": "Microsoft.Web/sites"
     }
   ]
