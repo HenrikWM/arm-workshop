@@ -58,6 +58,9 @@
         "name": "[parameters('webAppName')]",
         "serverFarmId": "[parameters('serverFarmName')]"
       },
+      "resources": [
+        
+      ],
       "type": "Microsoft.Web/sites"
     }
   ]
