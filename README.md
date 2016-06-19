@@ -7,6 +7,8 @@
   <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
 Deploy en enkel HelloWorld Web App til Azure og visualiser deployet infrastruktur.
 
 ## Workshop 
