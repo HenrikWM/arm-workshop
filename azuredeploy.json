@@ -13,14 +13,6 @@
         "sites_arm_worshop_name": {
             "defaultValue": "arm-worshop",
             "type": "String"
-        },
-        "repoURL": {
-            "type": "string",
-            "defaultValue": "https://github.com/HenrikWM/arm-workshop.git"
-        },
-        "branch": {
-            "type": "string",
-            "defaultValue": "master"
         }
     },
     "variables": {},
