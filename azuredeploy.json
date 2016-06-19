@@ -71,7 +71,7 @@
             "properties": {
                 "name": "[parameters('sites_arm_worshop_name')]",
                 "hostNames": [
-                    "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]",
+                    "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]"
                 ],
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_bekk_name'))]"
             },
