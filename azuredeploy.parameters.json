@@ -2,11 +2,14 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "siteName": {
-      "value": "GEN-UNIQUE"
-    },
-    "hostingPlanName": {
-      "value": "GEN-UNIQUE"
-    }
+            "components_arm_worshop_name": {
+            "value": "null"
+        },
+        "serverfarms_bekk_name": {
+            "value": null
+        },
+        "sites_arm_worshop_name": {
+            "value": null
+        }
   }
 }

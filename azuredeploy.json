@@ -1,107 +1,93 @@
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "siteName": {
-      "type": "string",
-      "metadata": {
-        "description": "The name of the web app that you wish to create."
-      }
-    },
-    "hostingPlanName": {
-      "type": "string",
-      "metadata": {
-        "description": "The name of the App Service plan to use for hosting the web app."
-      }
-    },
-    "sku": {
-      "type": "string",
-      "allowedValues": [
-        "F1",
-        "D1",
-        "B1",
-        "B2",
-        "B3",
-        "S1",
-        "S2",
-        "S3",
-        "P1",
-        "P2",
-        "P3",
-        "P4"
-      ],
-      "defaultValue": "S1",
-      "metadata": {
-        "description": "The pricing tier for the hosting plan."
-      }
-    },
-    "workerSize": {
-      "type": "string",
-      "allowedValues": [
-        "0",
-        "1",
-        "2"
-      ],
-      "defaultValue": "0",
-      "metadata": {
-        "description": "The instance size of the hosting plan (small, medium, or large)."
-      }
-    },
-    "repoURL": {
-      "type": "string",
-      "defaultValue": "https://github.com/bekk/arm-workshop.git",
-      "metadata": {
-        "description": "The URL for the GitHub repository that contains the project to deploy."
-      }
-    },
-    "branch": {
-      "type": "string",
-      "defaultValue": "master",
-      "metadata": {
-        "description": "The branch of the GitHub repository to use."
-      }
-    }
-  },
-  "resources": [
-    {
-      "apiVersion": "2015-08-01",
-      "name": "[parameters('hostingPlanName')]",
-      "type": "Microsoft.Web/serverfarms",
-      "location": "[resourceGroup().location]",
-      "sku": {
-        "name": "[parameters('sku')]",
-        "capacity": "[parameters('workerSize')]"
-      },
-      "properties": {
-        "name": "[parameters('hostingPlanName')]"
-      }
-    },
-    {
-      "apiVersion": "2015-08-01",
-      "name": "[parameters('siteName')]",
-      "type": "Microsoft.Web/sites",
-      "location": "[resourceGroup().location]",
-      "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
-      ],
-      "properties": {
-        "serverFarmId": "[parameters('hostingPlanName')]"
-      },
-      "resources": [
-        {
-          "apiVersion": "2015-08-01",
-          "name": "web",
-          "type": "sourcecontrols",
-          "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
-          ],
-          "properties": {
-            "RepoUrl": "[parameters('repoURL')]",
-            "branch": "[parameters('branch')]",
-            "IsManualIntegration": true
-          }
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "components_arm_worshop_name": {
+            "defaultValue": "arm-worshop",
+            "type": "String"
+        },
+        "serverfarms_bekk_name": {
+            "defaultValue": "bekk",
+            "type": "String"
+        },
+        "sites_arm_worshop_name": {
+            "defaultValue": "arm-worshop",
+            "type": "String"
         }
-      ]
-    }
-  ]
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourceGroups/bekk/providers/microsoft.insights/components/arm-worshop'.",
+            "type": "microsoft.insights/components",
+            "kind": "web",
+            "name": "[parameters('components_arm_worshop_name')]",
+            "apiVersion": "2014-04-01",
+            "location": "Central US",
+            "tags": {
+                "hidden-link:/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourceGroups/bekk/providers/Microsoft.Web/sites/arm-worshop": "Resource"
+            },
+            "properties": {
+                "ApplicationId": "[parameters('components_arm_worshop_name')]"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourceGroups/bekk/providers/Microsoft.Web/serverfarms/bekk'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "B1",
+                "tier": "Basic",
+                "size": "B1",
+                "family": "B",
+                "capacity": 1
+            },
+            "name": "[parameters('serverfarms_bekk_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "North Europe",
+            "properties": {
+                "name": "[parameters('serverfarms_bekk_name')]",
+                "numberOfWorkers": 1
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourceGroups/bekk/providers/Microsoft.Web/sites/arm-worshop'.",
+            "type": "Microsoft.Web/sites",
+            "name": "[parameters('sites_arm_worshop_name')]",
+            "apiVersion": "2015-08-01",
+            "location": "North Europe",
+            "tags": {
+                "hidden-related:/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourcegroups/bekk/providers/Microsoft.Web/serverfarms/bekk": "empty"
+            },
+            "properties": {
+                "name": "[parameters('sites_arm_worshop_name')]",
+                "hostNames": [
+                    "arm-worshop.azurewebsites.net"
+                ],
+                "enabledHostNames": [
+                    "arm-worshop.azurewebsites.net",
+                    "arm-worshop.scm.azurewebsites.net"
+                ],
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]",
+                        "sslState": 0,
+                        "thumbprint": null,
+                        "ipBasedSslState": 0
+                    },
+                    {
+                        "name": "[concat(parameters('sites_arm_worshop_name'),'.scm.azurewebsites.net')]",
+                        "sslState": 0,
+                        "thumbprint": null,
+                        "ipBasedSslState": 0
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_bekk_name'))]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_bekk_name'))]"
+            ]
+        }
+    ]
 }
