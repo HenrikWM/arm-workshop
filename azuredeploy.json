@@ -63,7 +63,7 @@
             "properties": {
                 "name": "[parameters('sites_arm_worshop_name')]",
                 "hostNames": [
-                    "arm-worshop.azurewebsites.net"
+                    "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]",
                 ],
                 "enabledHostNames": [
                     "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]",
