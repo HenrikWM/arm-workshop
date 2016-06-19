@@ -13,7 +13,13 @@
         "sites_arm_worshop_name": {
             "defaultValue": "arm-worshop",
             "type": "String"
-        }
+        },
+        "repoUrl": {
+            "value": "{REPO}"
+        },
+        "branch": {
+            "value": "{BRANCH}"
+        },
     },
     "variables": {},
     "resources": [
@@ -67,6 +73,20 @@
                 ],
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_bekk_name'))]"
             },
+            "resources": [
+            {
+              "apiVersion": "2015-08-01",
+              "name": "web",
+              "type": "sourcecontrols",
+              "dependsOn": [
+                "[resourceId('Microsoft.Web/Sites', parameters('sites_arm_worshop_name'))]"
+              ],
+              "properties": {
+                "RepoUrl": "[parameters('repoURL')]",
+                "branch": "[parameters('branch')]",
+                "IsManualIntegration": true
+              }
+            }],
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_bekk_name'))]"
             ]
