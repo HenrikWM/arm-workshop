@@ -65,24 +65,6 @@
                 "hostNames": [
                     "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]",
                 ],
-                "enabledHostNames": [
-                    "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]",
-                    "[concat(parameters('sites_arm_worshop_name'),'.scm..azurewebsites.net')]"
-                ],
-                "hostNameSslStates": [
-                    {
-                        "name": "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]",
-                        "sslState": 0,
-                        "thumbprint": null,
-                        "ipBasedSslState": 0
-                    },
-                    {
-                        "name": "[concat(parameters('sites_arm_worshop_name'),'.scm.azurewebsites.net')]",
-                        "sslState": 0,
-                        "thumbprint": null,
-                        "ipBasedSslState": 0
-                    }
-                ],
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_bekk_name'))]"
             },
             "resources": [
