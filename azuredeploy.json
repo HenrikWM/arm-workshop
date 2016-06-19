@@ -13,13 +13,7 @@
         "sites_arm_worshop_name": {
             "defaultValue": "arm-worshop",
             "type": "String"
-        },
-        "repoUrl": {
-            "value": "{REPO}"
-        },
-        "branch": {
-            "value": "{BRANCH}"
-        },
+        }
     },
     "variables": {},
     "resources": [
@@ -82,8 +76,8 @@
                 "[resourceId('Microsoft.Web/Sites', parameters('sites_arm_worshop_name'))]"
               ],
               "properties": {
-                "RepoUrl": "[parameters('repoURL')]",
-                "branch": "[parameters('branch')]",
+                "RepoUrl": "https://github.com/HenrikWM/arm-workshop.git",
+                "branch": "master",
                 "IsManualIntegration": true
               }
             }],
