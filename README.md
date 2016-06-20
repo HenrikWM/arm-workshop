@@ -16,7 +16,7 @@
 
 Workshoppen handler om provisjonering av ressurser og tjenester i Azure via [Azure Resource Manager] 
 
-Oppgavene tar deg igjennom GitHub-prosjekter og artkler som bruker ARM-templates for å deploye tjenester til Azure. Gå til [oppgavene].
+Oppgavene tar deg igjennom GitHub-prosjekter og artikler som bruker ARM-templates for å deploye tjenester til Azure. Gå til [oppgavene].
 
 Kontakt: [@henrikwm84] / henrik.walker.moe at bekk.no
 
@@ -52,7 +52,7 @@ Deretter åpner du `index.html` i en nettleser.
 
 [@henrikwm84]: <http://twitter.com/henrikwm84>
 [slides]: <https://github.com/henrikwm/arm-workshop/slides>
-[oppgavene]: <https://github.com/henrikwm/arm-workshop/Oppgaver.md>
+[oppgavene]: <https://github.com/HenrikWM/arm-workshop/blob/master/Oppgaver.md>
 [Azure Resource Manager]: <https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/>
 [remark-themet til BEKK]: <https://github.com/bekk/remark>
 [SlingShot]: <https://github.com/projectkudu/slingshot>
