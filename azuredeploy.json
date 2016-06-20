@@ -2,11 +2,11 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "hostingPlanName": {
+        "appserviceplan_name": {
             "defaultValue": "My app service plan name",
             "type": "String"
         },
-        "siteName": {
+        "sites_name": {
             "defaultValue": "My site name",
             "type": "String"
         }
@@ -22,26 +22,26 @@
                 "family": "B",
                 "capacity": 1
             },
-            "name": "[parameters('hostingPlanName')]",
+            "name": "[parameters('appserviceplan_name')]",
             "apiVersion": "2015-08-01",
             "location": "North Europe",
             "properties": {
-                "name": "[parameters('hostingPlanName')]",
+                "name": "[parameters('appserviceplan_name')]",
                 "numberOfWorkers": 1
             },
             "dependsOn": []
         },
         {         
             "type": "Microsoft.Web/sites",
-            "name": "[parameters('siteName')]",
+            "name": "[parameters('sites_name')]",
             "apiVersion": "2015-08-01",
             "location": "North Europe",            
             "properties": {
-                "name": "[parameters('siteName')]",
+                "name": "[parameters('sites_name')]",
                 "hostNames": [
-                    "[concat(parameters('siteName'),'.azurewebsites.net')]"
+                    "[concat(parameters('sites_name'),'.azurewebsites.net')]"
                 ],
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appserviceplan_name'))]"
             },
             "resources": [
             {
@@ -49,7 +49,7 @@
               "name": "web",
               "type": "sourcecontrols",
               "dependsOn": [
-                "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
+                "[resourceId('Microsoft.Web/Sites', parameters('sites_name'))]"
               ],
               "properties": {
                 "RepoUrl": "https://github.com/HenrikWM/arm-workshop.git",
@@ -58,7 +58,7 @@
               }
             }],
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+                "[resourceId('Microsoft.Web/serverfarms', parameters('appserviceplan_name'))]"
             ]
         }
     ]
