@@ -1,15 +1,22 @@
 # ARM-workshop
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FHenrikWM%2Farm-workshop%2Fmaster%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
+## Deploy dette prosjektet
+
+### Forhåndsvisning
+
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FHenrikWM%2Farm-workshop%2Fmaster%2Fazuredeploy.json" target="_blank">
   <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+### Deploy i Azure-portalen
 
-Deploy en enkel HelloWorld Web App til Azure og visualiser deployet infrastruktur.
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FHenrikWM%2Farm-workshop%2Fmaster%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
+
+### Fast-track deploy
+
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
 ## Workshop 
 
