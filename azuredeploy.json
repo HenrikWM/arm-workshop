@@ -2,7 +2,7 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "appserviceplan_name": {
+        "hostingPlanName": {
             "defaultValue": "My app service plan name",
             "type": "String"
         },
@@ -22,11 +22,11 @@
                 "family": "B",
                 "capacity": 1
             },
-            "name": "[parameters('appserviceplan_name')]",
+            "name": "[parameters('hostingPlanName')]",
             "apiVersion": "2015-08-01",
             "location": "North Europe",
             "properties": {
-                "name": "[parameters('appserviceplan_name')]",
+                "name": "[parameters('hostingPlanName')]",
                 "numberOfWorkers": 1
             },
             "dependsOn": []
@@ -41,7 +41,7 @@
                 "hostNames": [
                     "[concat(parameters('sites_name'),'.azurewebsites.net')]"
                 ],
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('appserviceplan_name'))]"
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
             },
             "resources": [
             {
@@ -58,7 +58,7 @@
               }
             }],
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', parameters('appserviceplan_name'))]"
+                "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
             ]
         }
     ]
