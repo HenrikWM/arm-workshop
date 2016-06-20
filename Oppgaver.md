@@ -38,9 +38,9 @@ I denne oppgaven skal du publisere tjenestene som dannet grunnlag for oppgaver t
 
 ### Eksporter din eksisterende Resource Group som ARM-template
 
-Å eksportere eksisterende tjenester er en fin måte å bli kjent med hvordan ARM-templates virker og kan være gode utgangspunkt for videre arbeid.
+Å eksportere eksisterende tjenester i ditt Azure-abonnement er en fin måte å bli kjent med hvordan ARM-templates virker og kan være et godt utgangspunkt for videre templatebygging.
 
-Gå til [Export an Azure Resource Manager template from existing resources] for å lære hvordan du kan ta utgangspunkt i en allerede eksisterende tjenesten i ditt Azure-abonnement og eksportere en ARM-template. 
+Gå til [Export an Azure Resource Manager template from existing resources] for å lære hvordan du kan ta utgangspunkt i en allerede eksisterende tjeneste i ditt Azure-abonnement og eksportere ut en ARM-template. 
 
 Gjør følgende:
 
