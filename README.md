@@ -1,7 +1,5 @@
 # ARM-workshop
 
-## Deploy dette prosjektet
-
 ### Forhåndsvisning
 
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FHenrikWM%2Farm-workshop%2Fmaster%2Fazuredeploy.json" target="_blank">
