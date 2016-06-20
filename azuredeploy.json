@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "appserviceplan_name": {
-            "defaultValue": "My serverfarm name",
+            "defaultValue": "My app service plan name",
             "type": "String"
         },
         "sites_name": {
