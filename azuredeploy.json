@@ -2,12 +2,12 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "serverfarms_bekk_name": {
-            "defaultValue": "bekk",
+        "serverfarms_name": {
+            "defaultValue": "My serverfarm name",
             "type": "String"
         },
-        "sites_arm_worshop_name": {
-            "defaultValue": "arm-worshop",
+        "sites_name": {
+            "defaultValue": "My site name",
             "type": "String"
         }
     },
@@ -23,11 +23,11 @@
                 "family": "B",
                 "capacity": 1
             },
-            "name": "[parameters('serverfarms_bekk_name')]",
+            "name": "[parameters('serverfarms_name')]",
             "apiVersion": "2015-08-01",
             "location": "North Europe",
             "properties": {
-                "name": "[parameters('serverfarms_bekk_name')]",
+                "name": "[parameters('serverfarms_name')]",
                 "numberOfWorkers": 1
             },
             "dependsOn": []
@@ -35,18 +35,18 @@
         {
             "comments": "Generalized from resource: '/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourceGroups/bekk/providers/Microsoft.Web/sites/arm-worshop'.",
             "type": "Microsoft.Web/sites",
-            "name": "[parameters('sites_arm_worshop_name')]",
+            "name": "[parameters('sites_name')]",
             "apiVersion": "2015-08-01",
             "location": "North Europe",
             "tags": {
                 "hidden-related:/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourcegroups/bekk/providers/Microsoft.Web/serverfarms/bekk": "empty"
             },
             "properties": {
-                "name": "[parameters('sites_arm_worshop_name')]",
+                "name": "[parameters('sites_name')]",
                 "hostNames": [
-                    "[concat(parameters('sites_arm_worshop_name'),'.azurewebsites.net')]"
+                    "[concat(parameters('sites_name'),'.azurewebsites.net')]"
                 ],
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_bekk_name'))]"
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_name'))]"
             },
             "resources": [
             {
@@ -54,7 +54,7 @@
               "name": "web",
               "type": "sourcecontrols",
               "dependsOn": [
-                "[resourceId('Microsoft.Web/Sites', parameters('sites_arm_worshop_name'))]"
+                "[resourceId('Microsoft.Web/Sites', parameters('sites_name'))]"
               ],
               "properties": {
                 "RepoUrl": "https://github.com/HenrikWM/arm-workshop.git",
@@ -63,7 +63,7 @@
               }
             }],
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_bekk_name'))]"
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_name'))]"
             ]
         }
     ]
