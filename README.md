@@ -10,9 +10,24 @@
 
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
+**Deploy to Azure** er en del av Kudu-verktøykassen og er drevet av [SlingShot]. 
+
 ## Workshop 
 
-Workshoppen handler om provisjonering av ressurser via [Azure Resource Manager], holdt av [@henrikwm84] for .NET-faggruppen i BEKK.
+Workshoppen handler om provisjonering av ressurser og tjenester i Azure via [Azure Resource Manager] 
+
+Oppgavene tar deg igjennom GitHub-prosjekter og artkler som bruker ARM-templates for å deploye tjenester til Azure. Gå til [oppgavene].
+
+Kontakt: [@henrikwm84] / henrik.walker.moe at bekk.no
+
+## Verktøy
+
+* Visual Studio - Forfatte **Resource Groups** med `azuredeploy.json`, `azuredeploy.parameters.json` og `metadata.json`
+* [Visual Studio Code] - Syntax highlighting, parsing av ARM-templates via [ARM-extension].
+* [Resource Explorer] - [Lær mer](https://azure.microsoft.com/en-us/blog/azure-resource-explorer-a-new-tool-to-discover-the-azure-api/).
+* [armviz.io] - Visualiser ARM-templates
+* [Azure CLI]
+* [Azure Powershell]
 
 ## Slides
 
@@ -37,5 +52,13 @@ Deretter åpner du `index.html` i en nettleser.
 
 [@henrikwm84]: <http://twitter.com/henrikwm84>
 [slides]: <https://github.com/henrikwm/arm-workshop/slides>
+[oppgavene]: <https://github.com/henrikwm/arm-workshop/Oppgaver.md>
 [Azure Resource Manager]: <https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/>
 [remark-themet til BEKK]: <https://github.com/bekk/remark>
+[SlingShot]: <https://github.com/projectkudu/slingshot>
+[Resource Explorer]: <https://resources.azure.com/>
+[armviz.io]: <http://armviz.io/>
+[Azure CLI]: <https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/>
+[Azure Powershell]: <https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/>
+[Visual Studio Code]: <https://code.visualstudio.com/>
+[ARM-extension]: <https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools&Wt.mc_id=DX_MVP8656>
