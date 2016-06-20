@@ -16,7 +16,7 @@
 
 Workshoppen handler om provisjonering av ressurser og tjenester i Azure via [Azure Resource Manager] 
 
-Oppgavene tar deg igjennom GitHub-prosjekter og artkler som bruker ARM-templates for å deploye tjenester til Azure. Gå til [oppgavene].
+Oppgavene tar deg igjennom GitHub-prosjekter og artikler som bruker ARM-templates for å deploye tjenester til Azure. Gå til [oppgavene].
 
 Kontakt: [@henrikwm84] / henrik.walker.moe at bekk.no
 
