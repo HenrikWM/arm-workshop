@@ -2,10 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "components_arm_worshop_name": {
-            "defaultValue": "arm-worshop",
-            "type": "String"
-        },
         "serverfarms_bekk_name": {
             "defaultValue": "bekk",
             "type": "String"
@@ -17,21 +13,6 @@
     },
     "variables": {},
     "resources": [
-        {
-            "comments": "Generalized from resource: '/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourceGroups/bekk/providers/microsoft.insights/components/arm-worshop'.",
-            "type": "microsoft.insights/components",
-            "kind": "web",
-            "name": "[parameters('components_arm_worshop_name')]",
-            "apiVersion": "2014-04-01",
-            "location": "Central US",
-            "tags": {
-                "hidden-link:/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourceGroups/bekk/providers/Microsoft.Web/sites/arm-worshop": "Resource"
-            },
-            "properties": {
-                "ApplicationId": "[parameters('components_arm_worshop_name')]"
-            },
-            "dependsOn": []
-        },
         {
             "comments": "Generalized from resource: '/subscriptions/233f5e0e-5e02-47c3-b6fa-84737a6089a8/resourceGroups/bekk/providers/Microsoft.Web/serverfarms/bekk'.",
             "type": "Microsoft.Web/serverfarms",
