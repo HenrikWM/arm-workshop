@@ -3,11 +3,9 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "hostingPlanName": {
-            "defaultValue": "My app service plan name",
             "type": "String"
         },
         "siteName": {
-            "defaultValue": "My site name",
             "type": "String"
         }
     },
