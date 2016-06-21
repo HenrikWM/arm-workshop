@@ -29,6 +29,18 @@ Kontakt: [@henrikwm84] / henrik.walker.moe at bekk.no
 * [Azure CLI]
 * [Azure Powershell]
 
+## Ressurser
+
+### Læring
+
+* Oppsamlingsartikkel på [ARM-resources] som tar for seg leselister, verktøy, eksempler og feilsøkingstips.
+* [Resource Manager template walkthrough]
+
+### Referanser
+
+* Oversikt over [Template Functions]
+* [ARM Api Reference]
+
 ## Slides
 
 Slides for workshopen dekker:
@@ -62,3 +74,7 @@ Deretter åpner du `index.html` i en nettleser.
 [Azure Powershell]: <https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/>
 [Visual Studio Code]: <https://code.visualstudio.com/>
 [ARM-extension]: <https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools&Wt.mc_id=DX_MVP8656>
+[ARM-resources]: <http://www.rajinders.com/2015/07/18/resources-to-learn-azure-resource-manager-arm-language/>
+[Template Functions]: <https://azure.microsoft.com/en-us/documentation/articles/resource-group-template-functions>
+[ARM Api Reference]: <https://msdn.microsoft.com/en-us/library/azure/mt420159.aspx>
+[Resource Manager template walkthrough]: <https://azure.microsoft.com/en-us/documentation/articles/resource-manager-template-walkthrough/>
