@@ -1,7 +1,9 @@
 # Oppgaver
 
-Oppgavene er fordelt etter vanskelighetsgrad og kan tas i valgfri rekkefølge. Alle bør ha gjennomført minst en enkel oppgaven
- for å teste at verktøy, Azure-konto og nettverk virker. Feilsøking på enkle ARM-templates er n-ganger enklere enn på store templates.
+Oppgavene er fordelt etter vanskelighetsgrad og det er ikke meningen å fullføre alle. På en 3-timers workshop burde man rekke 1-2 oppgaver, avhengig av tidligere erfaring. Plukk en oppgave som passer med ditt nivå og som vil lære mest av. Siste oppgave er fin hvis man vil ha en lang og komplett walkthough av å bruke ARM-templates.
+
+Alle bør ha gjennomført minst en enkel oppgave
+ for å teste at verktøy, Azure-konto og Azure SDKen du har virker. Feilsøking på enkle ARM-templates er n-ganger enklere enn på store templates.
 
 ## Vanskelighetsgrad: Enkel
 
