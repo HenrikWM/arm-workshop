@@ -61,6 +61,15 @@ Gå til [Provision and deploy microservices predictably in Azure] og følg artik
 
 Du får et glimrende utgangspukt for senere prosjekter ved å gjenbruke strukturen i ARM-templatene til [ToDoApp]-prosjektet.
 
+### Template Functions
+
+Ta utgangspunkt i en 101-web app.
+
+1. git clone ...
+2. Legg til en SQL Azure Database tjeneste
+3. Opprett en SQL-bruker med passord til din database
+4. Bruk databasen i din web app.
+5. Inject inn `connectionString` og SQL-brukernavn og -passord. Dette er secrets skal leses fra Azure KeyVault.
 
 [Export an Azure Resource Manager template from existing resources]: <https://azure.microsoft.com/en-us/documentation/articles/resource-manager-export-template/>
 [http://armviz.io/]: <http://armviz.io/>
