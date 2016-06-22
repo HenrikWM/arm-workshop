@@ -7,7 +7,7 @@
     "url": "https://github.com/henrikwm/arm-workshop.git"
   },
   "author": "Henrik Walker Moe <henrik.walker.moe@bekk.no>",
-  "license": "BEKK",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/henrikwm/arm-workshop/issues"
   },

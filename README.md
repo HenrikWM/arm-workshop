@@ -43,6 +43,8 @@ Kontakt: [@henrikwm84] / henrik.walker.moe at bekk.no
 
 ## Slides
 
+Gå til [slides]
+
 Slides for workshopen dekker:
 
 - Konsept
@@ -78,3 +80,4 @@ Deretter åpner du `index.html` i en nettleser.
 [Template Functions]: <https://azure.microsoft.com/en-us/documentation/articles/resource-group-template-functions>
 [ARM Api Reference]: <https://msdn.microsoft.com/en-us/library/azure/mt420159.aspx>
 [Resource Manager template walkthrough]: <https://azure.microsoft.com/en-us/documentation/articles/resource-manager-template-walkthrough/>
+[slides]: <https://arm-workshop.azurewebsites.net/slides>
