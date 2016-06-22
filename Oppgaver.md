@@ -63,7 +63,7 @@ Du får et glimrende utgangspukt for senere prosjekter ved å gjenbruke struktur
 
 ### Template Functions
 
-Ta utgangspunkt i en 101-web app.
+Ta utgangspunkt i en 101-web app fra [https://github.com/Azure/azure-quickstart-templates].
 
 1. git clone ...
 2. Legg til en SQL Azure Database tjeneste
