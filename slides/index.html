@@ -27,7 +27,7 @@ class: agenda
 
 * Konsept
 * Template format
-* Verktøy
+* Dagens mål
 * Oppgaver
 
 ---
@@ -36,8 +36,9 @@ class: agenda
 
 * Azure Resource Manager (ARM) templates == Infrastructure as Code i Azure
 * Utvikler > beskriver infrastruktur > ARM > provisjonerer tjenester i Azure
+* Deklarativt
 * DevOps - automatic deploys, immutable deploys
-* Secrets fra Azure KeyVault
+* Secrets i `connectionStrings` og `web.config` fra Azure KeyVault
 
 ???
 Muliggjør også andre verktøy som kan skripte infrastructure i Azure: TerraForm og etc.
@@ -124,9 +125,9 @@ App Service Plan koblet til web app
 
 #Konvensjoner
 
-* 3 filer: `azuredeploy.json`, `azuredeploy.parameters.json` og `metadata.json`
+* `azuredeploy.json`, `azuredeploy.parameters.json`
 * `apiVersion` som variabler i `azuredeploy.json`
-* Avansert: linke mellom templates
+* Linke mellom templates (avansert)
 
 ???
 Fortell om ryddig oppdeling av ARM-templatene
